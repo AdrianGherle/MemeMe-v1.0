@@ -13,38 +13,12 @@
                         <viewControllerLayoutGuide type="top" id="8s7-yl-gsD"/>
                         <viewControllerLayoutGuide type="bottom" id="KXn-16-TOE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Vyj-p9-3uF">
+                    <view key="view" contentMode="scaleAspectFit" id="Vyj-p9-3uF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar clipsSubviews="YES" clearsContextBeforeDrawing="NO" alpha="0.74999999999999978" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Gnh-Pa-RTg">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="aTS-7C-UeH"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="tp2-C1-mnq"/>
-                                    <barButtonItem systemItem="camera" id="J6D-8k-vnR">
-                                        <connections>
-                                            <action selector="cameraButton:" destination="hlN-ZT-ZOw" id="bj3-r2-gOI"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xgG-fk-ZEl"/>
-                                    <barButtonItem title="Photo Album" id="Oe1-9B-wyM">
-                                        <connections>
-                                            <action selector="photoAlbumButton:" destination="hlN-ZT-ZOw" id="th3-bb-D8z"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Mze-LW-kfP"/>
-                                </items>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="aTS-7C-UeH"/>
-                                    </mask>
-                                </variation>
-                            </toolbar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KSz-nH-RwW">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <textField clipsSubviews="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" placeholder="BOTTOM" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="vOo-ZA-QPZ">
@@ -81,25 +55,43 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.64999999999999969" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JOy-1Y-F6v">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="0VG-7j-o4j"/>
+                                    <barButtonItem enabled="NO" systemItem="camera" id="c5J-ab-oWr">
+                                        <connections>
+                                            <action selector="cameraButton:" destination="hlN-ZT-ZOw" id="nQJ-dh-j4i"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qOS-mV-m3Y"/>
+                                    <barButtonItem title="Album" id="2EV-26-jyM">
+                                        <connections>
+                                            <action selector="photoAlbumButton:" destination="hlN-ZT-ZOw" id="f22-Re-jR9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="NEm-jI-RM8"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qxp-4E-wlM" firstAttribute="top" secondItem="pu6-J9-rJ7" secondAttribute="bottom" constant="20" id="1ey-1O-1D7"/>
-                            <constraint firstItem="KXn-16-TOE" firstAttribute="top" secondItem="Gnh-Pa-RTg" secondAttribute="bottom" id="7Gq-q9-Xem"/>
                             <constraint firstItem="qxp-4E-wlM" firstAttribute="top" secondItem="8s7-yl-gsD" secondAttribute="bottom" constant="60" id="8Sh-Pe-O3y"/>
                             <constraint firstItem="pu6-J9-rJ7" firstAttribute="leading" secondItem="Vyj-p9-3uF" secondAttribute="leadingMargin" constant="-16" id="AxI-kx-zsy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JOy-1Y-F6v" secondAttribute="trailing" constant="-16" id="F1a-Zc-nrv"/>
+                            <constraint firstItem="KSz-nH-RwW" firstAttribute="top" secondItem="Vyj-p9-3uF" secondAttribute="topMargin" id="HIy-cE-AlC"/>
                             <constraint firstItem="qxp-4E-wlM" firstAttribute="top" secondItem="pu6-J9-rJ7" secondAttribute="bottom" constant="20" id="I1Z-rw-XlV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Gnh-Pa-RTg" secondAttribute="trailing" constant="-16" id="JL5-Jb-OlB"/>
-                            <constraint firstItem="KSz-nH-RwW" firstAttribute="leading" secondItem="Vyj-p9-3uF" secondAttribute="leadingMargin" constant="-16" id="MPX-AV-P49"/>
+                            <constraint firstItem="KXn-16-TOE" firstAttribute="top" secondItem="KSz-nH-RwW" secondAttribute="bottom" id="QvW-59-TX6"/>
+                            <constraint firstItem="JOy-1Y-F6v" firstAttribute="top" secondItem="vOo-ZA-QPZ" secondAttribute="bottom" constant="20" id="Sal-FP-ShG"/>
                             <constraint firstAttribute="centerX" secondItem="qxp-4E-wlM" secondAttribute="centerX" id="UwT-GP-jCc"/>
-                            <constraint firstItem="Gnh-Pa-RTg" firstAttribute="leading" secondItem="Vyj-p9-3uF" secondAttribute="leadingMargin" constant="-16" id="eup-yB-qas"/>
-                            <constraint firstItem="KSz-nH-RwW" firstAttribute="top" secondItem="Vyj-p9-3uF" secondAttribute="topMargin" id="hyU-BD-KzM"/>
+                            <constraint firstItem="KXn-16-TOE" firstAttribute="top" secondItem="JOy-1Y-F6v" secondAttribute="bottom" id="at9-IB-1Zy"/>
                             <constraint firstAttribute="centerX" secondItem="vOo-ZA-QPZ" secondAttribute="centerX" id="l73-vO-WFG"/>
-                            <constraint firstItem="Gnh-Pa-RTg" firstAttribute="top" secondItem="vOo-ZA-QPZ" secondAttribute="bottom" constant="20" id="pnS-Mp-03E"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pu6-J9-rJ7" secondAttribute="trailing" constant="-16" id="qOh-nn-tFC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KSz-nH-RwW" secondAttribute="trailing" constant="-16" id="tel-qM-jiA"/>
+                            <constraint firstItem="KSz-nH-RwW" firstAttribute="leading" secondItem="Vyj-p9-3uF" secondAttribute="leadingMargin" constant="-16" id="v0X-cO-72A"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KSz-nH-RwW" secondAttribute="trailing" constant="-16" id="wtK-4U-SvF"/>
                             <constraint firstItem="pu6-J9-rJ7" firstAttribute="top" secondItem="8s7-yl-gsD" secondAttribute="bottom" id="wuP-gk-POc"/>
-                            <constraint firstItem="Gnh-Pa-RTg" firstAttribute="top" secondItem="KSz-nH-RwW" secondAttribute="bottom" id="y6h-No-GPQ"/>
+                            <constraint firstItem="JOy-1Y-F6v" firstAttribute="leading" secondItem="Vyj-p9-3uF" secondAttribute="leadingMargin" constant="-16" id="yG6-WP-lkB"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -110,11 +102,11 @@
                     </view>
                     <connections>
                         <outlet property="bottomTF" destination="vOo-ZA-QPZ" id="LjA-Yy-QyK"/>
-                        <outlet property="cameraBtn" destination="J6D-8k-vnR" id="5So-zB-sBt"/>
+                        <outlet property="cameraBtn" destination="c5J-ab-oWr" id="8av-Nn-ZUt"/>
                         <outlet property="imagePickerView" destination="KSz-nH-RwW" id="k40-WW-JQN"/>
                         <outlet property="navigationBar" destination="pu6-J9-rJ7" id="x4s-hN-mF6"/>
                         <outlet property="shareBtn" destination="2rm-Tt-K2d" id="wis-Ea-UY0"/>
-                        <outlet property="toolbar" destination="Gnh-Pa-RTg" id="IoP-vg-zKi"/>
+                        <outlet property="toolbar" destination="JOy-1Y-F6v" id="Jvq-mf-7pD"/>
                         <outlet property="topTF" destination="qxp-4E-wlM" id="33s-Oa-Mxq"/>
                     </connections>
                 </viewController>

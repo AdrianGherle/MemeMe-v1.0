@@ -20,11 +20,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var toolbar: UIToolbar!
     
     
-    
-    // holds the
+    // holds the textfields attributes
     let memeTextAtributes = [NSStrokeColorAttributeName: UIColor.blackColor(), NSForegroundColorAttributeName: UIColor.whiteColor(),
         NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!, NSStrokeWidthAttributeName: -3,]
 
+    
+    //MARK: Override
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,8 +43,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTF.text = "BOTTOM"
     }
     
-    
-    //MARK: Override
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         cameraBtn.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
@@ -128,6 +127,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     @IBAction func cancelBtn(sender: AnyObject) {
+        
     }
     
     

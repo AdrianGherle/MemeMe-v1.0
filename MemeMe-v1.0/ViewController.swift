@@ -118,6 +118,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             applicationActivities: nil)
         self.presentViewController(activityViewController, animated: true, completion: nil)
         
+        
+        // TO DO: Fix saving the meme only if actually shared,
 //        activityViewController.completionWithItemsHandler = {(activity, success, items, error) in {
 //            self.save()
 //            self.dismissViewControllerAnimated(true, completion: nil)
@@ -127,7 +129,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     @IBAction func cancelBtn(sender: AnyObject) {
-        
+        topTF.enabled = false
+        bottomTF.enabled = false
+        topTF.text = "TOP"
+        bottomTF.text = "BOTTOM"
+        topTF.clearsOnBeginEditing = true
+        bottomTF.clearsOnBeginEditing = true
+        shareBtn.enabled = false
+        imagePickerView.image = nil
     }
     
     

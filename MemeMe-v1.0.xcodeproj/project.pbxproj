@@ -409,6 +409,7 @@
 				8B171D381B8777DD0026F82C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8B171D391B8777DD0026F82C /* Build configuration list for PBXNativeTarget "MemeMe-v1.0Tests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				8B171D3B1B8777DD0026F82C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -21,17 +21,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <textField clipsSubviews="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" placeholder="BOTTOM" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="vOo-ZA-QPZ">
-                                <rect key="frame" x="262" y="515" width="76.5" height="21"/>
+                            <textField autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" placeholder="BOTTOM" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="vOo-ZA-QPZ">
+                                <rect key="frame" x="0.0" y="515" width="600" height="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="qxp-4E-wlM">
-                                <rect key="frame" x="281" y="84" width="38" height="21"/>
+                            <textField autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" placeholder="TOP" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="qxp-4E-wlM">
+                                <rect key="frame" x="0.0" y="84" width="600" height="21"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" updatesFrequently="YES"/>
                                 </accessibility>
-                                <color key="textColor" red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" enablesReturnKeyAutomatically="YES"/>
                             </textField>
@@ -55,7 +56,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.64999999999999969" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JOy-1Y-F6v">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.74999999999999978" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JOy-1Y-F6v">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="0VG-7j-o4j"/>
@@ -76,17 +77,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qxp-4E-wlM" firstAttribute="top" secondItem="pu6-J9-rJ7" secondAttribute="bottom" constant="20" id="1ey-1O-1D7"/>
+                            <constraint firstItem="qxp-4E-wlM" firstAttribute="top" secondItem="pu6-J9-rJ7" secondAttribute="bottom" constant="20" id="7tQ-Rd-CiA"/>
                             <constraint firstItem="qxp-4E-wlM" firstAttribute="top" secondItem="8s7-yl-gsD" secondAttribute="bottom" constant="60" id="8Sh-Pe-O3y"/>
                             <constraint firstItem="pu6-J9-rJ7" firstAttribute="leading" secondItem="Vyj-p9-3uF" secondAttribute="leadingMargin" constant="-16" id="AxI-kx-zsy"/>
+                            <constraint firstItem="vOo-ZA-QPZ" firstAttribute="trailing" secondItem="JOy-1Y-F6v" secondAttribute="trailing" id="Crv-VM-Y8t"/>
+                            <constraint firstItem="vOo-ZA-QPZ" firstAttribute="leading" secondItem="JOy-1Y-F6v" secondAttribute="leading" id="Eb7-sY-pwp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JOy-1Y-F6v" secondAttribute="trailing" constant="-16" id="F1a-Zc-nrv"/>
+                            <constraint firstItem="JOy-1Y-F6v" firstAttribute="top" secondItem="vOo-ZA-QPZ" secondAttribute="bottom" constant="20" id="GDe-fy-qUM"/>
                             <constraint firstItem="KSz-nH-RwW" firstAttribute="top" secondItem="Vyj-p9-3uF" secondAttribute="topMargin" id="HIy-cE-AlC"/>
                             <constraint firstItem="qxp-4E-wlM" firstAttribute="top" secondItem="pu6-J9-rJ7" secondAttribute="bottom" constant="20" id="I1Z-rw-XlV"/>
                             <constraint firstItem="KXn-16-TOE" firstAttribute="top" secondItem="KSz-nH-RwW" secondAttribute="bottom" id="QvW-59-TX6"/>
-                            <constraint firstItem="JOy-1Y-F6v" firstAttribute="top" secondItem="vOo-ZA-QPZ" secondAttribute="bottom" constant="20" id="Sal-FP-ShG"/>
-                            <constraint firstAttribute="centerX" secondItem="qxp-4E-wlM" secondAttribute="centerX" id="UwT-GP-jCc"/>
+                            <constraint firstItem="qxp-4E-wlM" firstAttribute="leading" secondItem="pu6-J9-rJ7" secondAttribute="leading" id="Xdh-D3-ASQ"/>
                             <constraint firstItem="KXn-16-TOE" firstAttribute="top" secondItem="JOy-1Y-F6v" secondAttribute="bottom" id="at9-IB-1Zy"/>
-                            <constraint firstAttribute="centerX" secondItem="vOo-ZA-QPZ" secondAttribute="centerX" id="l73-vO-WFG"/>
+                            <constraint firstItem="qxp-4E-wlM" firstAttribute="trailing" secondItem="pu6-J9-rJ7" secondAttribute="trailing" id="fju-b9-sbB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pu6-J9-rJ7" secondAttribute="trailing" constant="-16" id="qOh-nn-tFC"/>
                             <constraint firstItem="KSz-nH-RwW" firstAttribute="leading" secondItem="Vyj-p9-3uF" secondAttribute="leadingMargin" constant="-16" id="v0X-cO-72A"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KSz-nH-RwW" secondAttribute="trailing" constant="-16" id="wtK-4U-SvF"/>

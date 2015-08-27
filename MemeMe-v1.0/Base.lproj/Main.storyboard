@@ -21,19 +21,25 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <textField autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" placeholder="BOTTOM" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="vOo-ZA-QPZ">
+                            <textField autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" placeholder="BOTTOM" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="vOo-ZA-QPZ">
                                 <rect key="frame" x="0.0" y="515" width="600" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="H9I-rA-Y18"/>
+                                </constraints>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" placeholder="TOP" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="qxp-4E-wlM">
+                            <textField autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" placeholder="TOP" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="qxp-4E-wlM">
                                 <rect key="frame" x="0.0" y="84" width="600" height="21"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" updatesFrequently="YES"/>
                                 </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="5v5-zt-paR"/>
+                                </constraints>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <navigationBar clipsSubviews="YES" alpha="0.74999999999999978" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pu6-J9-rJ7">
@@ -77,20 +83,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qxp-4E-wlM" firstAttribute="top" secondItem="pu6-J9-rJ7" secondAttribute="bottom" constant="20" id="7tQ-Rd-CiA"/>
                             <constraint firstItem="qxp-4E-wlM" firstAttribute="top" secondItem="8s7-yl-gsD" secondAttribute="bottom" constant="60" id="8Sh-Pe-O3y"/>
                             <constraint firstItem="pu6-J9-rJ7" firstAttribute="leading" secondItem="Vyj-p9-3uF" secondAttribute="leadingMargin" constant="-16" id="AxI-kx-zsy"/>
-                            <constraint firstItem="vOo-ZA-QPZ" firstAttribute="trailing" secondItem="JOy-1Y-F6v" secondAttribute="trailing" id="Crv-VM-Y8t"/>
-                            <constraint firstItem="vOo-ZA-QPZ" firstAttribute="leading" secondItem="JOy-1Y-F6v" secondAttribute="leading" id="Eb7-sY-pwp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JOy-1Y-F6v" secondAttribute="trailing" constant="-16" id="F1a-Zc-nrv"/>
-                            <constraint firstItem="JOy-1Y-F6v" firstAttribute="top" secondItem="vOo-ZA-QPZ" secondAttribute="bottom" constant="20" id="GDe-fy-qUM"/>
                             <constraint firstItem="KSz-nH-RwW" firstAttribute="top" secondItem="Vyj-p9-3uF" secondAttribute="topMargin" id="HIy-cE-AlC"/>
                             <constraint firstItem="qxp-4E-wlM" firstAttribute="top" secondItem="pu6-J9-rJ7" secondAttribute="bottom" constant="20" id="I1Z-rw-XlV"/>
+                            <constraint firstItem="vOo-ZA-QPZ" firstAttribute="trailing" secondItem="JOy-1Y-F6v" secondAttribute="trailing" id="IsT-Mu-FEB"/>
+                            <constraint firstItem="vOo-ZA-QPZ" firstAttribute="leading" secondItem="JOy-1Y-F6v" secondAttribute="leading" id="QYt-sT-QdP"/>
                             <constraint firstItem="KXn-16-TOE" firstAttribute="top" secondItem="KSz-nH-RwW" secondAttribute="bottom" id="QvW-59-TX6"/>
-                            <constraint firstItem="qxp-4E-wlM" firstAttribute="leading" secondItem="pu6-J9-rJ7" secondAttribute="leading" id="Xdh-D3-ASQ"/>
+                            <constraint firstItem="qxp-4E-wlM" firstAttribute="trailing" secondItem="pu6-J9-rJ7" secondAttribute="trailing" id="YNp-2o-qBq"/>
                             <constraint firstItem="KXn-16-TOE" firstAttribute="top" secondItem="JOy-1Y-F6v" secondAttribute="bottom" id="at9-IB-1Zy"/>
-                            <constraint firstItem="qxp-4E-wlM" firstAttribute="trailing" secondItem="pu6-J9-rJ7" secondAttribute="trailing" id="fju-b9-sbB"/>
+                            <constraint firstItem="qxp-4E-wlM" firstAttribute="leading" secondItem="pu6-J9-rJ7" secondAttribute="leading" id="dbe-yR-TFU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pu6-J9-rJ7" secondAttribute="trailing" constant="-16" id="qOh-nn-tFC"/>
+                            <constraint firstItem="JOy-1Y-F6v" firstAttribute="top" secondItem="vOo-ZA-QPZ" secondAttribute="bottom" constant="20" id="twU-hQ-KT9"/>
+                            <constraint firstItem="qxp-4E-wlM" firstAttribute="top" secondItem="pu6-J9-rJ7" secondAttribute="bottom" constant="20" id="ubl-dq-xAM"/>
                             <constraint firstItem="KSz-nH-RwW" firstAttribute="leading" secondItem="Vyj-p9-3uF" secondAttribute="leadingMargin" constant="-16" id="v0X-cO-72A"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KSz-nH-RwW" secondAttribute="trailing" constant="-16" id="wtK-4U-SvF"/>
                             <constraint firstItem="pu6-J9-rJ7" firstAttribute="top" secondItem="8s7-yl-gsD" secondAttribute="bottom" id="wuP-gk-POc"/>

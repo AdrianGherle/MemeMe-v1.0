@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,
+                      UITextFieldDelegate {
 
     
     @IBOutlet weak var imagePickerView: UIImageView!
@@ -20,9 +21,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var toolbar: UIToolbar!
     
     
-    // holds the textfields attributes
-    let memeTextAtributes = [NSStrokeColorAttributeName: UIColor.blackColor(), NSForegroundColorAttributeName: UIColor.whiteColor(),
-        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!, NSStrokeWidthAttributeName: -3,]
+    // Holds the textfields attributes
+    let memeTextAtributes = [NSStrokeColorAttributeName: UIColor.blackColor(),
+        NSForegroundColorAttributeName: UIColor.whiteColor(),
+        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSStrokeWidthAttributeName: -3,]
 
     
     //MARK: Override
@@ -48,16 +51,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         cameraBtn.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func prefersStatusBarHidden() -> Bool {
+        return true   // hide the status bar
     }
     
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
     
     //MARK: UITextFieldDelegate
     
+    // Hide keyboard when return key is pressed
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -84,8 +85,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //MARK: NSNotifications
     
     func subscribeToKeyboardNotifications() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:",
+            name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:",
+            name: UIKeyboardWillHideNotification, object: nil)
     }
     
     func unsubscribeFromKeyboardNotifications() {
@@ -93,10 +96,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
     
+    // Move view up when keyboard is shown
     func keyboardWillShow (notification: NSNotification) {
         self.view.frame.origin.y -= getKeyboardHeight(notification)
     }
     
+    // Move view back down after keyboard is hidden
     func keyboardWillHide (notification: NSNotification) {
         self.view.frame.origin.y += getKeyboardHeight(notification)
     }
@@ -111,23 +116,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     //MARK: IBAction
     
-    
     @IBAction func share(sender: AnyObject) {
-        var savedMeme = save()
-        let activityViewController = UIActivityViewController(activityItems: [savedMeme.memedImage],
+        let activityViewController = UIActivityViewController(activityItems: [generateMemedImage()],
             applicationActivities: nil)
         self.presentViewController(activityViewController, animated: true, completion: nil)
         
-        
-        // TO DO: Fix saving the meme only if actually shared,
-//        activityViewController.completionWithItemsHandler = {(activity, success, items, error) in {
-//            self.save()
-//            self.dismissViewControllerAnimated(true, completion: nil)
-//            }()
-//        }
+        // save the meme only if shared
+        activityViewController.completionWithItemsHandler = {(activity, success, items, error) in {
+            if success {
+                self.save()
+            }
+            self.dismissViewControllerAnimated(true, completion: nil)
+            }()
+        }
     }
     
-    
+    // Reset to application to initial (launch) state
     @IBAction func cancelBtn(sender: AnyObject) {
         topTF.enabled = false
         bottomTF.enabled = false
@@ -139,7 +143,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickerView.image = nil
     }
     
-    
+    // Access the camera
     @IBAction func cameraButton(sender: UIBarButtonItem) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
@@ -147,6 +151,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.presentViewController(pickerController, animated: true, completion: nil)
     }
     
+    // Access the photo album
     @IBAction func photoAlbumButton(sender: UIBarButtonItem) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
@@ -154,15 +159,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.presentViewController(pickerController, animated: true, completion: nil)
     }
     
+    
     //MARK: UIImagePickerController
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             self.imagePickerView.image = image
-
         }
         picker.dismissViewControllerAnimated(true, completion: nil)
         
-        // enable editing the textField after choosing a photo
+        // enable editing the textFields and the share button after choosing a photo
         topTF.enabled = true
         bottomTF.enabled = true
         shareBtn.enabled = true
@@ -174,6 +180,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     //MARK: Save the meme
+    
     func save () -> Meme {
         var meme = Meme(topText: topTF.text, bottomText: bottomTF.text, image: imagePickerView.image!,
             memedImage: generateMemedImage())
@@ -198,13 +205,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         return memedImage
     }
-    
-    
-    
-
 }
 
 
+// A Meme struct to help save the Meme object
 struct Meme {
     var topText: String
     var bottomText: String

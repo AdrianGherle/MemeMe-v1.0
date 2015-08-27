@@ -32,7 +32,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.delegate = self
+        navigationController?.delegate = self
         
         // set the properties of the text fields
         topTF.delegate = self
@@ -66,19 +66,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func textFieldDidBeginEditing(textField: UITextField) {
         if textField == bottomTF {
-            self.subscribeToKeyboardNotifications()
+            subscribeToKeyboardNotifications()
         }
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
         textField.clearsOnBeginEditing = false
         if textField == bottomTF {
-            self.unsubscribeFromKeyboardNotifications()
+            unsubscribeFromKeyboardNotifications()
         }
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        self.view.endEditing(true)
+        view.endEditing(true)
     }
 
     
@@ -98,12 +98,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // Move view up when keyboard is shown
     func keyboardWillShow (notification: NSNotification) {
-        self.view.frame.origin.y -= getKeyboardHeight(notification)
+        view.frame.origin.y -= getKeyboardHeight(notification)
     }
     
     // Move view back down after keyboard is hidden
     func keyboardWillHide (notification: NSNotification) {
-        self.view.frame.origin.y += getKeyboardHeight(notification)
+        view.frame.origin.y += getKeyboardHeight(notification)
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
@@ -119,7 +119,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func share(sender: AnyObject) {
         let activityViewController = UIActivityViewController(activityItems: [generateMemedImage()],
             applicationActivities: nil)
-        self.presentViewController(activityViewController, animated: true, completion: nil)
+        presentViewController(activityViewController, animated: true, completion: nil)
         
         // save the meme only if shared
         activityViewController.completionWithItemsHandler = {(activity, success, items, error) in {
@@ -148,7 +148,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
         pickerController.allowsEditing = true
-        self.presentViewController(pickerController, animated: true, completion: nil)
+        presentViewController(pickerController, animated: true, completion: nil)
     }
     
     // Access the photo album
@@ -156,7 +156,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
         pickerController.allowsEditing = true
-        self.presentViewController(pickerController, animated: true, completion: nil)
+        presentViewController(pickerController, animated: true, completion: nil)
     }
     
     
@@ -164,7 +164,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
-            self.imagePickerView.image = image
+            imagePickerView.image = image
         }
         picker.dismissViewControllerAnimated(true, completion: nil)
         
@@ -190,18 +190,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func generateMemedImage() -> UIImage {
         
         // Hide toolbar and navigation bar
-        self.navigationBar.hidden = true
-        self.toolbar.hidden = true
+        navigationBar.hidden = true
+        toolbar.hidden = true
         
         // Render view to an image
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawViewHierarchyInRect(view.frame, afterScreenUpdates: true)
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         // Show toolbar and navigation bar
-        self.navigationBar.hidden = false
-        self.toolbar.hidden = false
+        navigationBar.hidden = false
+        toolbar.hidden = false
         
         return memedImage
     }
@@ -215,7 +215,3 @@ struct Meme {
     var image: UIImage
     var memedImage: UIImage
 }
-
-
-
-
